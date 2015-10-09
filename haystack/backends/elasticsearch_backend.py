@@ -64,6 +64,11 @@ class ElasticsearchSearchBackend(BaseSearchBackend):
                         "tokenizer": "standard",
                         "filter": ["haystack_edgengram", "lowercase"]
                     }
+                    "naturalsort": {
+                        "tokenizer": "keyword",
+                        "filter": "naturalsort"
+                    }
+
                 },
                 "tokenizer": {
                     "haystack_ngram_tokenizer": {
@@ -730,6 +735,7 @@ FIELD_MAPPINGS = {
     'ngram':      {'type': 'string', 'analyzer': 'ngram_analyzer'},
     'date':       {'type': 'date'},
     'datetime':   {'type': 'date'},
+    "sort" : { "type" : "string", "analyzer" : "naturalsort" },
 
     'location':   {'type': 'geo_point'},
     'boolean':    {'type': 'boolean'},
