@@ -63,7 +63,7 @@ class ElasticsearchSearchBackend(BaseSearchBackend):
                         "type": "custom",
                         "tokenizer": "standard",
                         "filter": ["haystack_edgengram", "lowercase"]
-                    }
+                    },
                     "naturalsort": {
                         "tokenizer": "keyword",
                         "filter": "naturalsort"
